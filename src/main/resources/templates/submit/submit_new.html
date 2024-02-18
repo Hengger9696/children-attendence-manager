@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../static/css/style_common.css">
+		<link rel="stylesheet" href="../../static/css/style_submit_new.css">
+		<title>児童出欠管理システム</title>
+	</head>
+
+	<body>
+
+
+		<div th:replace="layout/header :: header"></div>
+
+
+		<main>
+			<div class="center">
+				<h3>提出物一覧表</h3>
+					<table border="submit_all">
+						<tr>
+							<th>提出物名</th>
+							<th>期限</th>
+							<th>未提出人数<br>（XX人中）</th>
+							<th>編集</th>
+							<th>削除</th>
+						</tr>
+						<tr>
+							<td>提出物1</td>
+							<td>xxxx/xx/xx</td>
+							<td>x</td>
+							<td><button>編集</button></td>
+							<td><button>削除</button></td>
+						</tr>
+						<tr>
+							<td>提出物2</td>
+							<td>xxxx/xx/xx</td>
+							<td>x</td>
+							<td><button>編集</button></td>
+							<td><button>削除</button></td>
+						</tr>
+						<tr>
+							<td>提出物3</td>
+							<td>xxxx/xx/xx</td>
+							<td>x</td>
+							<td><button>編集</button></td>
+							<td><button>削除</button></td>
+						</tr>
+					</table>
+
+				<h3>提出物新規作成</h3>
+					<div class = "submit_new">
+						<div class="submit_frame">
+							<div>
+								<label>提出物：</label>
+								<input type="text"/>
+							</div>
+
+							<div>
+								<label>期限：</label>
+								<input type="text"/>
+							</div>
+
+						</div>
+
+						<div class="submit_button">
+							<input type="submit" value="作成"/>
+						</div>
+					</div>
+
+
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (​FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+
+	</body>
+
+
+</html>

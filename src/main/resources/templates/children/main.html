@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/style_common.css}"/>
+	<link rel="stylesheet" th:href="@{/css/main.css}"/>
+	<title>児童出欠管理システム</title>
+	<script src="https://kit.fontawesome.com/a550589511.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div th:replace="layout/header :: header"></div>
+	<main>
+		<div class="center">
+			<h3>児童出欠管理</h3>
+				<form th:action="@{/attend/toroku}" th:object="${attendanceForm}" th:method="post">
+					<table border="submit_all">
+						<thead>
+						<tr>
+							<th>出席番号</th>
+							<th>名前</th>
+							<th>出席状況</th>
+							<th>健康状態</th>
+							<th>詳細</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr th:each="child : ${children}" th:id="${child.id}">
+							<td th:text="${child.num}"></td>
+							<td th:text="${child.name}"></td>
+							<td th:value="${child.attendance}">
+								<input type="radio" value="1" th:name="'attendance' + ${child.id}" id="attendyes">
+								<label for="attendyes">出席</label>
+								<input type="radio" value="0" th:name="'attendance' + ${child.id}" id="attendno">
+								<label for="attendno">欠席</label>
+							</td>
+							<td class="radios" th:value="child.health">
+								<input type="radio" id="contactChoice1" th:name="'contact' + ${child.id}" value="1" >
+								<label for="contactChoice1">良</label>
+<!--								<label for="contactChoice1">-->
+<!--									<span>〇</span>-->
+<!--									<i class="fa-regular fa-face-laugh-beam"></i>-->
+<!--								</label>-->
+								<input type="radio" id="contactChoice2" th:name="'contact' + ${child.id}" value="2" >
+								<label for="contactChoice2">普</label>
+<!--								<label for="contactChoice2">-->
+<!--									<span>×</span>-->
+<!--									<i class="fa-regular fa-face-meh"></i>-->
+<!--								</label>-->
+								<input type="radio" id="contactChoice3" th:name="'contact' + ${child.id}" value="3" >
+								<label for="contactChoice3">悪</label>	
+<!--								<label for="contactChoice3">-->
+<!--									<span>△</span>-->
+<!--									<i class="fa-regular fa-face-frown"></i>-->
+<!--								</label>-->
+							</td>
+							<td>
+								<a th:href="@{/attend/detail/{id}(id=${child.id})}" class="detail-button">詳細</a>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="submit_button">
+						<a th:href="@{/menu}">
+						<input type="submit" value="登録"  class="custom-button" id="toroku">  
+						 
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (​FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+	<script>
+    // JavaScriptで行の背景色を変更する関数
+    function updateRowColor(row) {
+        var attendanceRadio = row.querySelector('input[name^="attendance"]:checked');
+        var contactRadios = row.querySelectorAll('input[name^="contact]');
+
+        // ラジオボタンの値に応じて背景色を設定
+        if (attendanceRadio && attendanceRadio.value === "0") {
+            row.style.backgroundColor = "#F08080"; // 欠席時の背景色
+        } else {
+            row.style.backgroundColor = "white"; // 通常時の背景色
+        }
+
+        // 選択されたアイコンに対して背景色を設定
+        contactRadios.forEach(function (radio) {
+            if (radio.checked) {
+                var label = radio.nextElementSibling;
+                label.style.backgroundColor = "#80C7E5"; // 選択されたアイコンの背景色
+            } else {
+                var label = radio.nextElementSibling;
+                label.style.backgroundColor = "transparent"; // 未選択のアイコンの背景色
+            }
+        });
+    }
+
+    // ページ読み込み時に各行のラジオボタンの初期状態を反映
+    var rows = document.querySelectorAll('tr');
+    rows.forEach(function (row) {
+        var attendanceRadio = row.querySelector('input[name^="attendance"]:checked');
+        if (attendanceRadio) {
+            updateRowColor(row);
+        }
+    });
+
+    // ラジオボタンのクリックイベントをリッスン
+    var attendanceRadios = document.querySelectorAll('input[name^="attendance"]');
+    attendanceRadios.forEach(function (radio) {
+        radio.addEventListener('click', function () {
+            var row = this.closest('tr');
+            updateRowColor(row);
+        });
+    });
+
+    // アイコンのクリックイベントをリッスン
+    var contactRadios = document.querySelectorAll('input[name^="contact"]');
+    console.log(contactRadios);
+    contactRadios.forEach(function (radio) {
+		console.log(radio);
+        radio.addEventListener('click', function () {
+            var row = this.closest('tr');
+            console.log(row);
+            updateRowColor(row);
+        });
+    });
+   
+    
+</script>
+
+</body>
+</html>

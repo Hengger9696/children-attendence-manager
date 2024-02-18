@@ -1,0 +1,36 @@
+.children_details label {
+    padding-top: 20px;
+    display: inline-block !important;
+    width: 100px !important;
+    text-align: left !important;
+    margin-right: 10px !important;
+    font-size: 25px;
+}
+
+.children_details input[type="text"] {
+    display: block !important;
+    margin: 5px 0 !important;
+    width: 100% !important;
+    text-align: right !important;
+    height: 25px;
+}
+
+
+
+.add_button input[type="submit"] {
+    width: 100px !important;
+    height: 40px !important;
+    text-align: center !important;
+    margin: 30px auto !important;
+}
+
+.children_details {
+    width: 300px !important; /* もっと適切な幅を指定してください */
+    margin: 0 auto !important;
+}
+
+
+
+
+
+

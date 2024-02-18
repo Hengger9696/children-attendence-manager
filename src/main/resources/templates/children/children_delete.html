@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" th:href="@{/css/style_common.css}">
+		<link rel="stylesheet" th:href="@{/css/children_detail.css}">
+		<title>児童出欠管理システム</title>
+		<script src="https://kit.fontawesome.com/a550589511.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<div th:replace="layout/header :: header"></div>
+
+		<main>
+			<div class="center">
+				<h3>児童情報削除</h3>
+				<div class = "children_details">
+					<div>
+						<label>出席番号</label>
+						<p th:text="${child.num}"></p>
+					</div>
+					<div>
+						<label>名前</label>
+						<p th:text="${child.name}"></p>
+					</div>
+					<div>
+						<label>住所</label>
+						<p th:text="${child.address}"></p>
+					</div>
+					<div>
+						<label>連絡先</label>
+						<p th:text="${child.phoneNumber}"></p>
+					</div>
+					<div>
+						<label>健康状態</label>
+						<p>
+							<span th:if="${child.health == 1}" class="fa-regular fa-face-laugh-beam"></span>
+							<span th:if="${child.health == 2}" class="fa-regular fa-face-meh"></span>
+							<span th:if="${child.health == 3}" class="fa-regular fa-face-frown"></span>
+						</p>
+					</div>
+					<div>
+						<label class="memo">メモ</label>
+						<p th:text="${child.memo}"></p>
+					</div>
+					<div>
+						<p>本当に削除しますか</p>
+					</div>
+					<div class="delete_button">
+						<a th:href="@{/attend/delete/{id}(id=${id})}">
+    						<button type="button">削除</button>
+						</a>
+					</div>
+					<div class="return_button">
+						<a th:href="@{/attend/detail/{id}(id=${id})}">
+    						<button type="button">戻る</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+	</body>
+</html>

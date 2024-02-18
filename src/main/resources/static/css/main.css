@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+
+
+
+
+table{
+	width: 80%;
+    border-collapse: collapse; /* セル間の隙間をなくす */
+    margin: 0 auto; /* 左右中央に配置 */
+}
+
+th{
+	color:white;
+	background-color:#4474c3;
+}
+td{
+	height: 40px;
+	padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center; /* コンテンツを中央寄せ */
+}
+
+.submit_button{
+	text-align: center; /* ボタンを中央に配置 */
+    margin-top: 40px; /* 上下の余白を調整（必要に応じて調整） */
+
+}
+
+.custom-button {
+	width: 100px; /* 幅を50pxに設定 */
+    height: 40px; /* 高さを30pxに設定 */
+}
+
+
+label{
+	margin:0px 0px 0px 0px;
+	width:100px;
+}
+
+table tbody tr td:nth-child(1),
+table tbody tr td:nth-child(2) {
+    width: 1%;
+}
+
+table tbody tr td:nth-child(3),
+table tbody tr td:nth-child(4) {
+    width: 3%;
+}
+
+table tbody tr td:nth-child(5) {
+    width: 2%;
+}
+
+/* アイコンのスタイル */
+.radios label {
+    display: inline-block;
+    margin-right: 10px; /* アイコン間の間隔を調整 */
+    cursor: pointer;
+}
+
+/* 選択されたアイコンのスタイル */
+.radios label.selected i {
+    color: green; /* 選択されたときのアイコンの色を変更 */
+    font-size: 24px; /* 選択されたときのアイコンのサイズを変更 */
+}

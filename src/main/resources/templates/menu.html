@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" th:href="@{/css/style_common.css}"/>
+	<link rel="stylesheet" href="../static/css/menu.css">
+	<title>児童出欠管理システム</title>
+</head>
+
+<body>
+	<div th:replace="layout/header :: header"></div>
+	<main>
+		<div class="center">
+			<h3>出欠管理</h3>
+			<ul>
+				<li>
+					<a th:href="@{/attend/index}">出欠管理画面</a>
+					<label class="label_s">・出欠管理を行います。</label>
+				</li>
+				<li>
+					<a th:href="@{/attend/create}">新規児童登録</a>
+					<label class="label_s">・新規児童の登録を行います。</label>
+				</li>
+			</ul>
+
+			<h3>提出物管理</h3>
+			<ul>
+				<li>
+					<a th:href="@{/submission/index}">提出物一覧</a>
+					<label class="label_t">・提出物の管理を行います。</label>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer_font">copyright© technopro aws course team C (​FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+	</footer>
+
+	</body>
+</html>

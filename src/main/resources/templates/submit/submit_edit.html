@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../static/css/style_common.css">
+		<link rel="stylesheet" href="../../static/css/style_submit_edit.css">
+		<title>児童出欠管理システム</title>
+	</head>
+
+	<body>
+
+
+		<div th:replace="layout/header :: header"></div>
+
+
+
+		<main>
+			<div class="center">
+				<h3>提出状況一覧表</h3>
+					<table border="submit_all">
+						<tr>
+							<th>名前</th>
+							<th>提出済み</th>
+							<th>未提出</th>
+						</tr>
+						<tr>
+							<td>生徒1</td>
+							<td><button>提出</button></td>
+							<td><button>未提出</button></td>
+						</tr>
+						<tr>
+							<td>生徒2</td>
+							<td><button>提出</button></td>
+							<td><button>未提出</button></td>
+						</tr>
+						<tr>
+							<td>生徒3</td>
+							<td><button>提出</button></td>
+							<td><button>未提出</button></td>
+						</tr>
+					</table>
+
+					<div class="submit_button">
+						<input type="submit" value="保存"/>
+					</div>
+					<button class="button_main">戻る</button>
+
+
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (​FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+
+	</body>
+
+
+</html>

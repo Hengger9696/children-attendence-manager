@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/style_common.css">
+    <link rel="stylesheet" href="../../css/style_submit_edit.css">
+    <title>児童出欠管理システム</title>
+</head>
+
+<body>
+    <div th:replace="layout/header :: header"></div>
+
+       <main>
+        <div class="center">
+            <h3>提出状況一覧表</h3>
+            <form th:action="@{/submission/submitEditSave/{id}(id=${submission.id})}" method="post" th:object="${submissionDTO}">
+                <table border="submit_all">
+                    <tr>
+						<th>ID</th>
+						<th>児童番号</th>
+                        <th>名前</th>
+                        <th>提出済み</th>
+                        <th>未提出</th>
+                    </tr>
+                    <tr th:each="item, st: *{submittedList}">
+						<td th:text="${item.id}"></td>
+							<input type="hidden" th:field="*{submittedList[__${st.index}__].id}">
+						<td th:text="${item.childId}"></td>
+							<input type="hidden" th:field="*{submittedList[__${st.index}__].childId}">
+                        <th th:text="${item.name}"></th>
+                        	<th>
+								<input type="radio" value="1" th:field="*{submittedList[__${st.index}__].submitted}">
+								<label for="submitYes">提出</label>
+							</th>
+							<th>
+								<input type="radio" value="0" th:field="*{submittedList[__${st.index}__].submitted}">
+								<label for="submitNno">未提出</label>
+							</th>
+                    </tr>
+                </table>
+                <div class="submit_button">
+                    <input type="submit" value="保存"/>
+                    <a th:href="@{/submission/index}">
+    						<button type="button">戻る</button>
+					</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="footer_font">copyright© technopro aws course team C (HUJIZAWA, HURUZAWA, IMAIZUMI, YU, SONG)</div>
+    </footer>
+</body>
+</html>

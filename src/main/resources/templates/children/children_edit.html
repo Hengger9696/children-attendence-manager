@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" th:href="@{/css/style_common.css}">
+		<link rel="stylesheet" th:href="@{/css/children_edit.css}">
+		<title>児童出欠管理システム</title>
+		<script src="https://kit.fontawesome.com/a550589511.js" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<div th:replace="layout/header :: header"></div>
+
+		<main>
+			<div class="center">
+				<h3>児童情報編集</h3>
+				<div class = "children_details">
+					<form th:action="@{/attend/save}" th:object="${child}" method="post">
+					<div>
+						<label>出席番号</label>
+						<input type="text" th:field="*{num}">
+					</div>
+					<div>
+						<label>名前</label>
+						<input type="text" th:field="*{name}">
+					</div>
+					<div>
+						<label>住所</label>
+						<input type="text" th:field="*{address}">
+					</div>
+					<div>
+						<label>連絡先</label>
+						<input type="text" th:field="*{phoneNumber}">
+					</div>
+					<div>
+						<label>健康状態</label>
+						<input type="radio" id="maru" th:value="1" th:field="*{health}" >
+						<label class="label_radio" for="maru">
+							<i class="fa-regular fa-face-laugh-beam"></i>
+						</label>
+						<input type="radio" id="sannkaku" th:value="2" th:field="*{health}" >
+						<label class="label_radio" for="sannkaku">
+							<i class="fa-regular fa-face-meh"></i>
+						</label>
+						<input type="radio" id="batsu" th:value="3" th:field="*{health}" >
+						<label class="label_radio" for="batsu">
+							<i class="fa-regular fa-face-frown"></i>
+						</label>
+					</div>
+					<div>
+						<label class="memo">メモ</label>
+						<textarea id="story" name="story" rows="5" cols="33" th:field="*{memo}"></textarea>
+					</div>
+					<div class="edit_button">
+						<input type="submit" value="登録"/>
+					</div>
+					<div class="return_button">
+						<a th:href="@{/attend/detail/{id}(id=${id})}">
+    						<button type="button">戻る</button>
+						</a>
+					</div>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (​FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+
+
+	</body>
+
+
+</html>

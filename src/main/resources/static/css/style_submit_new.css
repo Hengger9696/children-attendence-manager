@@ -1,0 +1,56 @@
+form {
+    position: absolute;
+    left: 10%; /* 画面左側に移動 */
+    top: 36%;
+    width: 40%; /* 幅を縮小 */
+    padding: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px 0; /* 左右の余白を調整 */
+    display: block; /* ラベルをブロック要素に変更 */
+}
+
+input {
+    padding: 7px 0;
+    border-width: 2px;
+    width: 100%; /* 入力フィールドの幅を100%に */
+}
+
+table {
+    position: relative;
+    left: 30%;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+th {
+    color: white;
+    background-color: #4474c3;
+}
+
+td {
+    background-color: #cfd5ea;
+}
+
+.submit_new {
+    position: relative;
+    left: 10%; /* 画面左側に移動 */
+    top: 36px;
+}
+
+.submit_frame {
+    border: 1px solid black;
+    width: 80%; /* 幅を調整 */
+}
+
+.submit_button {
+    position: relative;
+    top: 10px;
+    left: 0; /* 左に寄せる */
+    text-align: center; /* ボタンを中央に配置 */
+    width: 100%; /* 幅を100%に */
+}

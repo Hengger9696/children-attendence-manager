@@ -1,0 +1,15 @@
+<!-- header.html -->
+<header>
+    <div><h1 class="title"><a th:href="@{/menu}">児童出欠管理システム</a></h1></div>
+    <div class="menu">
+		<a th:href="@{/menu}" class="top_menu">
+			<span class="icon"><i class="fa-solid fa-bars" style="color: #4674c3;"></i> メニュー</span>
+		</a>
+        <span class="class_name">クラス&emsp;<span th:text="${classInfo.name}"></span></span>
+        <a th:href="@{/loginForm}" class="logout">
+			<span><i class="fa-solid fa-arrow-right-from-bracket" style="color: #4674c3;"></i>ログアウト</span>
+		</a>
+    </div>
+    <script src="https://kit.fontawesome.com/a550589511.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+</header>

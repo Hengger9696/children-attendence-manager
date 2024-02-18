@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" th:href="@{../css/style_common.css}">
+		<link rel="stylesheet" th:href="@{../css/children_add.css}">
+		<title>児童出欠管理システム</title>
+	</head>
+
+	<body>
+		<div th:replace="layout/header :: header"></div>
+
+		<main>
+			<div class="center">
+				<h3>新規登録</h3>
+				<div class = "children_details">
+					<form th:action="@{/attend/create}" th:object="${child}" method="post">
+						<div>
+							<label>出席番号</label>
+							<input type="text" th:field="*{num}">
+						</div>
+						<div>
+							<label>名前</label>
+							<input type="text" th:field="*{name}">
+						</div>
+						<div>
+							<label>住所</label>
+							<input type="text" th:field="*{address}">
+						</div>
+						<div>
+							<label>連絡先</label>
+							<input type="text" th:field="*{phoneNumber}">
+						</div>
+						<div class="add_button">
+							<input type="submit" value="登録"/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer_font">copyright© technopro aws course team C (FURUSAWA,FUJISAWA,IMAIZUMI,YU,SONG)</div>
+		</footer>
+
+	</body>
+
+
+</html>

@@ -1,0 +1,52 @@
+form{
+	position:absolute;
+    left:36%;
+	top:36%;
+	
+	width:50%;	
+}
+
+
+label{
+	font-weight: bold;
+	font-size: 30px;
+	margin:20px 20px 20px 20px;
+	
+	display:inline-block;
+	width:150px;
+}
+
+input{
+	padding:7px 0px;
+	border-width:2px;
+}
+
+table {
+    position: absolute;
+    left: 20%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 60%;
+}
+
+th{
+	color:white;
+	background-color:#4474c3;
+}
+
+td{
+	background-color:#cfd5ea;
+}
+
+.submit_button{
+	float:left;
+	position:relative;
+	left:63%;
+}
+
+.button_main{
+	float:right;
+	position:relative;
+	right:30%;
+}

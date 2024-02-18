@@ -1,0 +1,38 @@
+a {
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.class_name {
+	font-size:26px;
+	color:#4674c3;
+}
+
+.top_menu{
+	font-size:26px;
+	color:#4674c3;
+}
+
+
+
+.logout{
+	font-size:26px;
+	color:#4674c3;
+}
+
+.menu {
+    display: flex; /* 子要素を水平に配置 */
+    justify-content: space-between; /* 要素間を均等に配置（左右寄せ） */
+    align-items: center; /* 垂直方向に中央に配置 */
+}
+
+.menu .icon,
+.menu .class_name,
+.menu .logout {
+    margin: 0; /* デフォルトのマージンをリセット */
+}
+
+.menu .class_name {
+    text-align: center; /* テキストを中央に配置 */
+}
+

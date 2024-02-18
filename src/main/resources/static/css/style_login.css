@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+form{
+	position:absolute;
+    left:36%;
+
+	width:50%;
+	top:36%;
+
+}
+
+
+label{
+	font-weight: bold;
+	font-size: 30px;
+	margin:20px 0px 20px 0px;
+
+	display:inline-block;
+	width:300px;
+}
+
+input{
+	padding:7px 0px;
+	border-width:2px;
+}
+
+
+button{
+	position:absolute;
+	right:50%;
+}
+
+.login_button {
+    margin-top: 30px;
+    margin-right:170px;
+    width: 100px; /* 幅を50pxに設定 */
+    height: 40px; /* 高さを30pxに設定 */
+    display: block; /* ボタンをブロック要素に変更 */
+}
+.form-control {
+	width:200px;
+}
+
